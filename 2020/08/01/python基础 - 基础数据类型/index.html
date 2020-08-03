@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/7 | python知识点分享</title>
+  <title>python基础 - 基础数据类型 | python知识点分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是测试用的 &#x2F;&#x2F;网站描述">
-<meta name="keywords" content="hexo,next,python,博客    &#x2F;&#x2F;网站关键字,用英文逗号分开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="python知识点分享">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;07&#x2F;index.html">
+  <meta name="description" content="本文主要讲解python的基础数据类型，包括数字、字符串、布尔值、列表、元组、字典、集合。">
+<meta name="keywords" content="python,基础,数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础 - 基础数据类型">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;01&#x2F;python%E5%9F%BA%E7%A1%80%20-%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B&#x2F;index.html">
 <meta property="og:site_name" content="python知识点分享">
-<meta property="og:description" content="这是测试用的 &#x2F;&#x2F;网站描述">
+<meta property="og:description" content="本文主要讲解python的基础数据类型，包括数字、字符串、布尔值、列表、元组、字典、集合。">
 <meta property="og:locale" content="zh-CN &#x2F;&#x2F;这里改成上面在主题配置文件中看到的语言名字，注意英文冒号:后面有一个空格">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;%E5%88%97%E8%A1%A8%E6%BC%94%E7%A4%BA.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;%E5%B8%83%E5%B0%94%E5%80%BC%E6%BC%94%E7%A4%BA.png">
+<meta property="og:updated_time" content="2020-08-03T14:43:37.707Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;%E5%88%97%E8%A1%A8%E6%BC%94%E7%A4%BA.png">
   
     <link rel="alternative" href="/atom.xml" title="python知识点分享" type="application/atom+xml">
   
@@ -156,49 +160,316 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python基础 - 基础数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/26/python%E5%9F%BA%E7%A1%80%20-%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-07-26T06:00:36.837Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/26/python%E5%9F%BA%E7%A1%80%20-%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">python基础 - 基础数据类型</a>
+    <h1 class="article-title" itemprop="name">
+      python基础 - 基础数据类型
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/08/01/python%E5%9F%BA%E7%A1%80%20-%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2020-08-01T00:33:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> [toc]</p>
+<p>本文主要讲解python的基础数据类型，包括数字、字符串、布尔值、列表、元组、字典、集合。</p>
+ <a id="more"></a> 
 
+<h3 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h5><p>python的数字类型分为整数、长整数、浮点数</p>
+<h6 id="整型-int"><a href="#整型-int" class="headerlink" title="整型 int"></a><em>整型</em> int</h6><p>​    例如：1，11，22，34… </p>
+<p>​    32位的机器取值范围为  -2147483648～2147483647 </p>
+<p>​    64位的机器取值范围为 -9223372036854775808～9223372036854775807 </p>
+<h6 id="长整型-long"><a href="#长整型-long" class="headerlink" title="长整型 long"></a><em>长整型</em> long</h6><p>​    区别于C语言，Python的长整型没有指定位宽，不考虑机器虚拟内存大小的前提下可以表示无限大的整数</p>
+<p>​    写法为数值后面带有‘L’或者‘l’</p>
+<p>​    注意： 自从Python2.2起，如果整数发生溢出，Python会自动将整数数据转换为长整数 ，就是说<u>python3不再有长整型，都归到了int里</u></p>
+<h6 id="浮点型-float"><a href="#浮点型-float" class="headerlink" title="浮点型 float"></a>浮点型 float</h6><p>​    可以理解为小数， 类似于C语言中的double类型，占8个字节（64位），其中52位表示底，11位表示指数，剩下的一位表示符号。 </p>
+<h6 id="复数-conplex"><a href="#复数-conplex" class="headerlink" title="复数 conplex"></a>复数 conplex</h6><p>​     复数由实数部分和虚数部分组成，一般形式为x＋yj，其中的x是复数的实数部分，y是复数的虚数部分，这里的x和y都是实数。 </p>
+<h5 id="数字转换"><a href="#数字转换" class="headerlink" title="数字转换"></a>数字转换</h5><p>​    <code>int(x base=None)</code>将X转换为一个整数, base为按照多少进制进行转换</p>
+<p>​    <code>float(x)</code> 将x转换为一个浮点数</p>
+<p>​    <code>complex(x)</code>将x转换为一个复数,实数部分为x, 虚数部分为0.</p>
+<p>​    <code>complex(x, y)</code>将 x 和 y 转换到一个复数，实数部分为 x，虚数部分为 y。x 和 y 是数字表达式 </p>
+<p>​    <code>bit_lenght(x)</code> 当前十进制数字转换为二进制后，至少用几位表示 </p>
+<p>​    <code>bin()</code>函数将十进制转换为二进制</p>
+<p>​     <code>oct()</code>函数将十进制转换为八进制</p>
+<p>​     <code>hex()</code>函数将十进制转换为十六进制 </p>
+<h5 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h5><p>​    <code>abs(x)</code>返回数字的绝对值</p>
+<p>​    <code>ceil(x)</code> 返回数字的上入整数，进一法</p>
+<p>​    <code>cmp(x,y)</code> 如果 x &lt; y 返回 -1, 如果 x == y 返回 0, 如果 x &gt; y 返回 1。 Python 3 已废弃 。使用 使用 (x&gt;y)-(x&lt;y) 替换 </p>
+<p>​    <code>exp(x)</code> 返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045 </p>
+<p>​    <code>floor(x)</code> 返回数字的下舍整数，去尾法</p>
+<p>​    <code>log(x)</code>    如math.log(math.e)返回1.0,math.log(100,10)返回2.0 </p>
+<p>​    <code>log10(x)</code>    返回以10为基数的x的对数，如math.log10(100)返回 2.0 </p>
+<p>​    <code>max(x1, x2,...)</code>    返回给定参数的最大值，参数可以为序列。 </p>
+<p>​    <code>min(x1, x2,...)</code>    返回给定参数的最小值，参数可以为序列。 </p>
+<p>​    <code>modf(x)</code>    返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。 </p>
+<p>​    <code>pow(x, y)</code>    x**y 运算后的值。 </p>
+<p>​    <code>round(x [,n])</code>    返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数,不会补0。 </p>
+<p>​    <code>sqrt(x)</code>    返回数字x的平方根，数字可以为负数，返回类型为实数，如math.sqrt(4)返回 2+0j</p>
+<h5 id="数学常量"><a href="#数学常量" class="headerlink" title="数学常量"></a>数学常量</h5><p>​    <code>math.pi</code>    圆周率</p>
+<p>​    <code>math.e</code>    自然常数</p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>它是一个有序的字符的集合，用于存储和表示基本的文本信息 ，在python中认为所有被单引号或双引号括起来的字符都是字符串。</p>
+<p>字符串一旦创建，则不可以修改。一旦修改或者拼接，都会造成重新生成字符串，则要赋予一个新的值</p>
+<h5 id="字符串的方法"><a href="#字符串的方法" class="headerlink" title="字符串的方法"></a>字符串的方法</h5><h6 id="字符串的通用方法"><a href="#字符串的通用方法" class="headerlink" title="字符串的通用方法"></a>字符串的通用方法</h6><p>len()：计算字符串的字符数</p>
+<p>索引：根据索引取值，从0开始计数</p>
+<p>​    例如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello world'</span></span><br><span class="line">print(s[<span class="number">6</span>])</span><br></pre></td></tr></table></figure>
+
+<p>​    结果为w</p>
+<p>切片：类似于数学里面的区间，左闭右开</p>
+<p>for循环：可以对字符串进行for循环遍历</p>
+<h6 id="字符串的专属方法："><a href="#字符串的专属方法：" class="headerlink" title="字符串的专属方法："></a>字符串的专属方法：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">capitalize()</span><br><span class="line">将字符串的第一个字符转换为大写</span><br><span class="line"></span><br><span class="line">center(width, fillchar) </span><br><span class="line">返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。</span><br><span class="line"></span><br><span class="line">count(str, beg= 0,end=len(string))</span><br><span class="line">返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数</span><br><span class="line">    </span><br><span class="line">bytes.decode(encoding=&quot;utf-8&quot;, errors=&quot;strict&quot;) </span><br><span class="line">Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回。</span><br><span class="line">    </span><br><span class="line">encode(encoding=&apos;UTF-8&apos;,errors=&apos;strict&apos;)</span><br><span class="line">以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是&apos;ignore&apos;或者&apos;replace&apos;</span><br><span class="line">    </span><br><span class="line">endswith(suffix, beg=0, end=len(string))</span><br><span class="line">检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.</span><br><span class="line">    </span><br><span class="line">expandtabs(tabsize=8)</span><br><span class="line">把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。</span><br><span class="line">    </span><br><span class="line">find(str, beg=0 end=len(string))</span><br><span class="line">检测 str 是否包含在字符串中 中，如果 beg 和 end 指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回-1</span><br><span class="line">    </span><br><span class="line">index(str, beg=0, end=len(string))</span><br><span class="line">跟find()方法一样，只不过如果str不在字符串中会报一个异常.</span><br><span class="line">    </span><br><span class="line">isalnum()   </span><br><span class="line">如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False</span><br><span class="line">    </span><br><span class="line">isalpha()</span><br><span class="line">如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False</span><br><span class="line">    </span><br><span class="line">isdigit()   </span><br><span class="line">如果字符串只包含数字则返回 True 否则返回 False..</span><br><span class="line">    </span><br><span class="line">islower()</span><br><span class="line">如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False</span><br><span class="line">    </span><br><span class="line">isnumeric()</span><br><span class="line">如果字符串中只包含数字字符，则返回 True，否则返回 False</span><br><span class="line">    </span><br><span class="line">isspace()</span><br><span class="line">如果字符串中只包含空格，则返回 True，否则返回 False.</span><br><span class="line">    </span><br><span class="line">istitle()</span><br><span class="line">如果字符串是标题化的(见 title())则返回 True，否则返回 False</span><br><span class="line">    </span><br><span class="line">isupper()</span><br><span class="line">如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False</span><br><span class="line">    </span><br><span class="line">join(seq)</span><br><span class="line">以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串</span><br><span class="line">    </span><br><span class="line">len(string)</span><br><span class="line">返回字符串长度</span><br><span class="line">    </span><br><span class="line">ljust(width[, fillchar])</span><br><span class="line">返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。</span><br><span class="line">    </span><br><span class="line">lower()</span><br><span class="line">转换字符串中所有大写字符为小写.</span><br><span class="line">    </span><br><span class="line">lstrip()</span><br><span class="line">截掉字符串左边的空格</span><br><span class="line">    </span><br><span class="line">maketrans()</span><br><span class="line">创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。</span><br><span class="line">    </span><br><span class="line">max(str)</span><br><span class="line">返回字符串 str 中最大的字母。</span><br><span class="line">    </span><br><span class="line">min(str)</span><br><span class="line">返回字符串 str 中最小的字母。</span><br><span class="line">    </span><br><span class="line">replace(old, new [, max])</span><br><span class="line">把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。</span><br><span class="line">    </span><br><span class="line">rfind(str, beg=0,end=len(string))</span><br><span class="line">类似于 find()函数，不过是从右边开始查找.</span><br><span class="line">    </span><br><span class="line">rindex( str, beg=0, end=len(string))</span><br><span class="line">类似于 index()，不过是从右边开始.</span><br><span class="line"></span><br><span class="line">rjust(width,[, fillchar])</span><br><span class="line">返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串</span><br><span class="line">    </span><br><span class="line">rstrip()</span><br><span class="line">删除字符串字符串末尾的空格.</span><br><span class="line">    </span><br><span class="line">split(str=&quot;&quot;, num=string.count(str))</span><br><span class="line">num=string.count(str)) 以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串</span><br><span class="line">    </span><br><span class="line">splitlines([keepends])</span><br><span class="line">按照行(&apos;\r&apos;, &apos;\r\n&apos;, \n&apos;)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。</span><br><span class="line">    </span><br><span class="line">startswith(str, beg=0,end=len(string))</span><br><span class="line">检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。</span><br><span class="line">    </span><br><span class="line">strip([chars])</span><br><span class="line">在字符串上执行 lstrip()和 rstrip()</span><br><span class="line">    </span><br><span class="line">swapcase()</span><br><span class="line">将字符串中大写转换为小写，小写转换为大写</span><br><span class="line">    </span><br><span class="line">title()</span><br><span class="line">返回&quot;标题化&quot;的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())</span><br><span class="line">    </span><br><span class="line">translate(table, deletechars=&quot;&quot;)</span><br><span class="line">根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 deletechars 参数中</span><br><span class="line"></span><br><span class="line">upper()</span><br><span class="line">转换字符串中的小写字母为大写</span><br><span class="line">    </span><br><span class="line">zfill (width)</span><br><span class="line">返回长度为 width 的字符串，原字符串右对齐，前面填充0</span><br><span class="line"></span><br><span class="line">isdecimal()</span><br><span class="line">检查字符串是否只包含十进制字符，如果是返回 true，否则返回 false。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><p>布尔值只有两种：<strong>True</strong> 与 <strong>False</strong>，用来表达条件的正确与否。</p>
+<p>0或者空的数据类型等同于False</p>
+<p>如图，数字0与空字符串对应的布尔值都是False</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/%E5%88%97%E8%A1%A8%E6%BC%94%E7%A4%BA.png" alt></p>
+<p>需要注意的是，python中的True 与 False<strong>首字母大写</strong>才表示布尔值</p>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><h5 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h5><p>我们已经知道的数据类型有：数字、字符串、布尔值，其中数字用来计算、字符串用来条件判断、只有字符串可以用于数据的存储，但是字符串<strong>只能存储少量的数据</strong>，并且字符串<strong>能存储的数据类型单一</strong>，只能是字符串类型。</p>
+<p>所以python引入了一类数据类型，这种数据类型能存储多种的数据类型，我们称之为容器类数据类型，列表就是容器类数据类型的一员。</p>
+<p>列表是python的基础数据类型之一，类同与js中的数组，它是以”[]”括起来，元素之间用”,”隔开，其中元素可以是多种数据类型，如：lis = [1, “python”, True, [1, ‘2’,”san” ], {“name”: “lilei”} ]</p>
+<p>列表可以存储大量的数据，32位python限制是 <code>2**31-1</code>个元素，64为python<code>2**63-1</code>个元素</p>
+<h5 id="列表的创建"><a href="#列表的创建" class="headerlink" title="列表的创建"></a>列表的创建</h5><p>列表的创建有三种方法：</p>
+<p>1、lis = [1, 2, 3]，此方式最为常用</p>
+<p>2、lis = list(‘1,2,3’)，此方式不太常用，须注意，<strong>括号内的参数必须是可迭代的对象</strong></p>
+<p>3、lis = [i for i in range(5)]，这是用的列表推导式生成的列表，lis实际为[0, 1, 2, 3, 4]，具体后面再讲</p>
+<h5 id="列表的取值"><a href="#列表的取值" class="headerlink" title="列表的取值"></a>列表的取值</h5><p>列表和字符串一样是可以进行索引和切片的，如图：</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/%E5%B8%83%E5%B0%94%E5%80%BC%E6%BC%94%E7%A4%BA.png" alt></p>
+<p>列表的是有序的，其中的元素下标从0依次递增，索引取值就是通过下标去取值。</p>
+<p>而切片是从原列表中截取一段出来，<strong>切片属于浅拷贝</strong>，后面会就深浅拷贝专门讲解。</p>
+<p>切片前两个数字代表的含义是起始位置和终止位置，用:隔开，左闭右开，意思就是说<code>lis[1:3]</code>取到的是下标为1、2的元素</p>
+<p>起始位置为0时可以省略；终止位置为最后一个元素时，用-1表示，也可以省略，当终止位置大于现有元素的索引时，如上图<code>lis[:9]</code>等价于<code>lis[:]</code>等价于<code>lis[0:4]</code>都是完全切片</p>
+<p>切片可以设置步长，步长的意思是取每n个元素，默认为1，意思就是都取，若为负数就是指从后向前取值如上图，若取<code>lis[-1][::-2]</code>那么返回的值就为<code>&quot;nhy&quot;</code></p>
+<h5 id="列表的方法"><a href="#列表的方法" class="headerlink" title="列表的方法"></a>列表的方法</h5><h6 id="增"><a href="#增" class="headerlink" title="增"></a>增</h6><p>1、追加元素 <code>append(object)</code></p>
+<p>追加是指在列表最后添加元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2]</span><br><span class="line">print(lis)  # [1, 2]</span><br><span class="line">lis.append(&quot;3&quot;)</span><br><span class="line">print(lis)  # [1, 2, &apos;3&apos;]</span><br></pre></td></tr></table></figure>
+
+<p>2、插入元素<code>insert(index,object)</code></p>
+<p>插入元素可以指定索引插入，若指定处已经有元素了，此处及之后的原元素依次后移</p>
+<p>这里的索引参照对象是原列表，可以为负数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">print(lis)  # [1, 2, 3, 4]</span><br><span class="line">lis.insert(0, 5)</span><br><span class="line">print(lis)  # [5, 1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<p>3、迭代追加<code>extend(iterable)</code></p>
+<p>迭代追加传入的参数<strong>必须是可迭代的元素</strong>，即容器类数据类型。除了目前已经介绍到的字符串、列表还有字典、列表、元组和集合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = &quot;像首歌&quot;</span><br><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">lis.extend(s)</span><br><span class="line">print(lis)  # [1, 2, 3, 4, &apos;像&apos;, &apos;首&apos;, &apos;歌&apos;]</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="删"><a href="#删" class="headerlink" title="删"></a>删</h6><p>1、pop(index)</p>
+<p>删除指定元素的元素，该方法是<strong>有返回值的</strong>，返回值为删除的元素</p>
+<p>注意：一般来说，可变数据类型的删的方法是没有返回值的，列表的pop方法是个例外，<strong>我们在学习数据类型的方法时，应该注意方法是否有返回值，初学者很容易犯的一个错就是==给没有返回值的方法加上打印==</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">ret = lis.pop(3)</span><br><span class="line">print(ret)  # 4</span><br><span class="line">print(lis)  # [1, 2, 3]</span><br></pre></td></tr></table></figure>
+
+<p>2、remove(object)</p>
+<p>从列表中移除指定元素，若列表中不存在该元素会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">lis.remove(2)</span><br><span class="line">print(lis)  # [1, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<p>3、clear()</p>
+<p>清空列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">lis.clear()</span><br><span class="line">print(lis)  # []</span><br></pre></td></tr></table></figure>
+
+<p>4、del</p>
+<p>确切的说del属于通用方法，它不是列表专属方法。del做的是删除一个变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">del lis[2:]</span><br><span class="line">print(lis)  # [1, 2]</span><br><span class="line">del lis[-1]</span><br><span class="line">print(lis)  # [1]</span><br><span class="line">del lis</span><br><span class="line">print(lis)  # NameError: name &apos;lis&apos; is not defined</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="改"><a href="#改" class="headerlink" title="改"></a>改</h6><p>1、按照索引该值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">lis[2] = 5</span><br><span class="line">print(lis)  # [1, 2, 5, 4]</span><br></pre></td></tr></table></figure>
+
+<p>2、按照切片改值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4]</span><br><span class="line">lis[2] = 5</span><br><span class="line">print(lis)  # [1, 2, 5, 4]</span><br><span class="line">lis[1:3] = &quot;python&quot;</span><br><span class="line">print(lis)  # [1, &apos;p&apos;, &apos;y&apos;, &apos;t&apos;, &apos;h&apos;, &apos;o&apos;, &apos;n&apos;, 4]</span><br><span class="line">lis[::2] = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;]</span><br><span class="line">print(lis)  # [&apos;1&apos;, &apos;p&apos;, &apos;2&apos;, &apos;t&apos;, &apos;3&apos;, &apos;o&apos;, &apos;4&apos;, 4]</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，<strong>当按照切片修改列表元素时，如果设置了步长，替换的元素个数必须与切片取出的元素个数一致</strong>，如上第6行，<code>lis[::2]</code>取出来的值是<code>[1, &#39;y&#39;, &#39;h&#39;, &#39;n&#39;]</code>所以赋的值的长度必须是4</p>
+<h6 id="查"><a href="#查" class="headerlink" title="查"></a>查</h6><p>列表的查我们可以通过索引、切片或者遍历取值，比较简单这里就不做演示了。</p>
+<h6 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h6><p>除了上述操作还有count、index、sort、reverse等常用方法</p>
+<p><code>count(object)</code>统计某个元素在列表中出现的次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 2, 3, 4, &quot;1&quot;, 1, &quot;21&quot;, &quot;2&quot;, 1]</span><br><span class="line">print(lis.count(1))  # 3</span><br></pre></td></tr></table></figure>
+
+<p><code>index(object)</code>找出列表中指定值的第一个匹配元素的索引，<strong>列表中没有指定元素会报错</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lis = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="string">"1"</span>, <span class="number">1</span>, <span class="string">"21"</span>, <span class="string">"2"</span>, <span class="number">1</span>]</span><br><span class="line">print(lis.index(<span class="number">1</span>))  <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
+
+<p><code>sort(key=None, reverse=False)</code>sort是列表排序方法，其中key可以传一个函数，指的是排序参照，reverse指是否翻转，False的话就是升序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 6, 3, 4, 2, 1]</span><br><span class="line">lis.sort()</span><br><span class="line">print(lis)  # [1, 1, 2, 3, 4, 6]</span><br></pre></td></tr></table></figure>
+
+<p>上面是sort方法的基础使用演示，下面演示指定key的场景，其中lambda是匿名函数，意思是取列表中每个元素下的第三个值作为排序依据，这里先做一个了解吧，之后再详细介绍匿名函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis = [[&quot;张三&quot;, &quot;男&quot;, 20], [&quot;李四&quot;, &quot;女&quot;, 18], [&quot;王五&quot;, &quot;男&quot;, 36], [&quot;赵六&quot;, &quot;女&quot;, 8]]</span><br><span class="line">lis.sort(key=lambda personal_info: personal_info[2], reverse=True)</span><br><span class="line">print(lis)  # [[&apos;王五&apos;, &apos;男&apos;, 36], [&apos;张三&apos;, &apos;男&apos;, 20], [&apos;李四&apos;, &apos;女&apos;, 18], [&apos;赵六&apos;, &apos;女&apos;, 8]]</span><br></pre></td></tr></table></figure>
+
+<p><code>reverse()</code>将列表中的元素反向存放</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lis = [1, 3, 5, 7, 5, 2]</span><br><span class="line">lis.reverse()</span><br><span class="line">print(lis)  # [2, 5, 7, 5, 3, 1]</span><br></pre></td></tr></table></figure>
+
+<p><code>lis.reverse()</code>与<code>lis[::-1]</code>都可以获得原列表的逆序列表，不同的是reverse反转的是原列表，是没有返回值，而切片不会改变原列表的值，它是新建了一个变量。</p>
+<p>此外列表可以相加，也可以与数字相乘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis1 = [1, 3, 5, 7, 5, 2]</span><br><span class="line">lis2 = [&quot;python&quot;, &quot;java&quot;]</span><br><span class="line">print(lis1 + lis2)  # [1, 3, 5, 7, 5, 2, &apos;python&apos;, &apos;java&apos;]</span><br><span class="line">print(lis2 * 2)  # [&apos;python&apos;, &apos;java&apos;, &apos;python&apos;, &apos;java&apos;]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h4><p>元组又被称为只读列表，顾名思义里面的元素时不可修改的，元素用小括号括起来。</p>
+<p>可以使用通过索引、切片、循环遍历查取其中的值，列表的count与index方法同样适用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tup = (1, 2, 3, &quot;4&quot;, True)</span><br><span class="line">print(tup[:2])  # (1, 2)</span><br><span class="line">print(tup.index(&quot;4&quot;))  # 3</span><br><span class="line">print(tup.count(1))  # 2</span><br></pre></td></tr></table></figure>
+
+<p>元组一般放一些比较重要不希望被修改的数据。</p>
+<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/01/python%E5%9F%BA%E7%A1%80%20-%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础数据类型"><span class="toc-number">1.</span> <span class="toc-text">基础数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数字"><span class="toc-number">1.1.</span> <span class="toc-text">数字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本介绍"><span class="toc-number">1.1.1.</span> <span class="toc-text">基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#整型-int"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">整型 int</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#长整型-long"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">长整型 long</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#浮点型-float"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">浮点型 float</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#复数-conplex"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">复数 conplex</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数字转换"><span class="toc-number">1.1.2.</span> <span class="toc-text">数字转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数学函数"><span class="toc-number">1.1.3.</span> <span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数学常量"><span class="toc-number">1.1.4.</span> <span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串"><span class="toc-number">1.2.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#定义"><span class="toc-number">1.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串的方法"><span class="toc-number">1.2.2.</span> <span class="toc-text">字符串的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#字符串的通用方法"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">字符串的通用方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#字符串的专属方法："><span class="toc-number">1.2.2.2.</span> <span class="toc-text">字符串的专属方法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#布尔值"><span class="toc-number">1.3.</span> <span class="toc-text">布尔值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列表"><span class="toc-number">1.4.</span> <span class="toc-text">列表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本介绍-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列表的创建"><span class="toc-number">1.4.2.</span> <span class="toc-text">列表的创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列表的取值"><span class="toc-number">1.4.3.</span> <span class="toc-text">列表的取值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列表的方法"><span class="toc-number">1.4.4.</span> <span class="toc-text">列表的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#增"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">增</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">删</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#改"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">改</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#查"><span class="toc-number">1.4.4.4.</span> <span class="toc-text">查</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#其他操作"><span class="toc-number">1.4.4.5.</span> <span class="toc-text">其他操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#元组"><span class="toc-number">1.5.</span> <span class="toc-text">元组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字典"><span class="toc-number">1.6.</span> <span class="toc-text">字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集合"><span class="toc-number">1.7.</span> <span class="toc-text">集合</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -221,8 +492,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -289,6 +560,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

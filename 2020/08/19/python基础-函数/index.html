@@ -18,7 +18,11 @@
 <meta property="og:locale" content="zh-CN &#x2F;&#x2F;这里改成上面在主题配置文件中看到的语言名字，注意英文冒号:后面有一个空格">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20200909214953.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20200909223833.png">
-<meta property="og:updated_time" content="2020-09-13T14:30:23.838Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201011210908.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201011214040.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201018182054.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201018182710.png">
+<meta property="og:updated_time" content="2020-10-18T15:06:25.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20200909214953.png">
   
@@ -211,7 +215,44 @@
 <p>实参传入的时候可以混用，可以全部使用位置传参的形式传入，也可以全部用关键字参数的形式传入，还可以既用位置传参也用关键字传参，但是需要记住位置参数需要在关键字参数之前。</p>
 <h4 id="函数的进阶"><a href="#函数的进阶" class="headerlink" title="函数的进阶"></a>函数的进阶</h4><h5 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h5><p>前面已经说了函数参数的定义与传参，但是当我们定义函数的时候不确定传入参数的的个数该怎么办呢？</p>
 <p>这时候我们需要引入形参的第三种方式——动态参数。动态参数分为两种<code>*args</code>与<code>**kwargs</code></p>
-<h5 id="名称空间"><a href="#名称空间" class="headerlink" title="名称空间"></a>名称空间</h5><h5 id="函数的嵌套"><a href="#函数的嵌套" class="headerlink" title="函数的嵌套"></a>函数的嵌套</h5><h5 id="global与nonlocal"><a href="#global与nonlocal" class="headerlink" title="global与nonlocal"></a>global与nonlocal</h5><p>未完。。待续</p>
+<h6 id="动态位置参数：-args"><a href="#动态位置参数：-args" class="headerlink" title="动态位置参数：*args"></a>动态位置参数：<code>*args</code></h6><p><code>args</code>只是一个普通的形参，前面加上<code>*</code>就有了特殊的含义，这里的<code>*</code>并不是表示乘号，而是<strong>聚合</strong>的作用，将未在形参中指定的位置参数(实际传参多余的)都以<strong>元组</strong>的形式聚合起来，如下图：</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201011210908.png" alt></p>
+<p>函数show_info明确定义的位置参数只有<code>name</code>, <code>sex</code>, <code>age</code>三个，就是说这三个参数调用的时候不能少，而<code>hobbies</code>由于前面带上了<code>*</code>，所以就变成了动态位置参数，所以实际调用的时候传入的参数个数可以变化(&gt;=3)。张三的爱好有两个hobbies就是长度为2的元组，菜虚鲲的爱好有三个，所以hobbies就是长度为2的元组。</p>
+<p>虽然动态位置参数的参数名可以是任意符合规范的变量名，但是一般我们都会默认遵守<code>PEP8</code>规范以<code>*args</code>命名。</p>
+<h6 id="动态关键字参数：-kwargs"><a href="#动态关键字参数：-kwargs" class="headerlink" title="动态关键字参数：**kwargs"></a>动态关键字参数：<code>**kwargs</code></h6><p>动态关键字参数类同动态位置参数，不过参数名前面不再是<code>*</code>，而是<code>**</code>。由于关键字参数需要有键与值的对应关系(关键字=值)，所以聚合之后的数据格式用元组不太合适，这里采用的数据格式是字典。如下是使用示例：</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201011214040.png" alt></p>
+<p>动态关键字参数调用传实参的时候以关键字传参的形式，会别聚合成字典传入函数，一样是可传任意数量的关键字参数。</p>
+<p>虽然动态关键字参数的参数名可以是任意符合规范的变量名，但是一般我们都会默认遵守<code>PEP8</code>规范以<code>**kwargs</code>命名。</p>
+<h6 id="的用法——聚合和打散"><a href="#的用法——聚合和打散" class="headerlink" title="*的用法——聚合和打散"></a><code>*</code>的用法——聚合和打散</h6><p>上面说了动态参数的实现就是利用了<code>*</code>的聚合的特性，这里简单介绍下<code>*</code>的用法。</p>
+<p>聚合就不再举例了，上面函数形参中动态参数的就是聚合的例子，<code>*</code>将元素聚合成为元组，<code>**</code>将元素聚合成字典。聚合还可以在函数中使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, *b = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>,)</span><br><span class="line">print(a, b)  <span class="comment"># 1 [2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>介绍打散之前先引入一个例子，如下图，我想将<code>s1</code>、<code>lis1</code>、<code>tu1</code>三个容器类数据类型中的每一个元素都作为一个函数的位置参数传进去，即我希望打印<code>(&#39;人&#39;, &#39;生&#39;, &#39;苦&#39;, &#39;短&#39;, &#39;我&#39;, &#39;用&#39;, &#39;python&#39;)</code>的结果，这时候如何做呢？</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201018182054.png" alt></p>
+<p>直接将三个变量作为参数传入肯定无法满足需求的，这个时候就可以使用<code>*</code>的打散的功能，在实参前面加上<code>*</code>就可以了。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201018182710.png" alt></p>
+<p><strong>注意：以上特性均是在python3.6版本的前提下，python2的环境*只支持在形参处的聚合，其他用法不支持</strong></p>
+<p>==形参的顺序==依次为：位置参数，动态位置参数(<code>*args</code>)，默认值参数，动态关键字参数(<code>**kwargs</code>)</p>
+<p>==实参的顺序==依次为：位置参数，动态位置参数(<code>*args</code>)，默认值参数，动态关键字参数(<code>**kwargs</code>)</p>
+<p>补充一下：在python3中形参<code>*args</code>之后的参数可以没有默认值，但是传参必须带上参数名，如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b, *args, c)</span>:</span></span><br><span class="line">    print(a, b)</span><br><span class="line">    print(args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)  <span class="comment"># 这样传慧报错，5会传入动态位置参数中，c没有值会报缺参数的错</span></span><br><span class="line">func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, c=<span class="number">5</span>)  <span class="comment"># 这样才可以</span></span><br></pre></td></tr></table></figure>
+
+<p>这个形参c叫仅限关键字参数，位置等同默认值参数，了解一下即可。</p>
+<h5 id="命名空间与作用域"><a href="#命名空间与作用域" class="headerlink" title="命名空间与作用域"></a>命名空间与作用域</h5><p>为了方便脚本执行机制的理解，这里需要介绍一点理论性的东西。</p>
+<h6 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h6><p>​        首先，我们引入一个概念：命名空间。当python解释器开始运行的时候就会开辟一块空间，每遇到一个变量就会将变量名与值的对应关系存到这个空间中，在遇到函数是也是如此，并不会去关心函数内部的变量及逻辑。这个存放变量名与值的关系的空间就称为命名空间。</p>
+<p>​        全局命名空间：python脚本中，非函数内部的变量都属于全局命名空间</p>
+<p>​        局部命名空间：在函数内部声明的变量属于局部命名空间</p>
+<p>​        内置命名空间：python解释器提供的一些变量，诸如<code>list</code>、<code>str</code>、<code>int</code>等都属于内置命名空间</p>
+<p>加载顺序：</p>
+<p>​        python解释器启动，先加载内置命名空间，以便获取一些内置方法、变量；然后开始从上往下逐行读脚本，遇到初始化变量会加载全局命名空间，将其对应关系置于其中，遇到函数存函数名与函数地址对应关系置于其中(此时不会去读函数体中的内容)；当执行某函数时才会开辟空间加载函数之中的变量，即加载局部命名空间。因此，命名空间的加载顺序为：内置命名空间–&gt;全局命名空间–&gt;局部命名空间(有调用时)。</p>
+<p>取值顺序：</p>
+<p>​        取值顺序与加载顺序是相反的，按照就近原则来取，局部命名空间中有的就取用，没有就去上一级找，直到直到内置名称空间还是没有就会报错。</p>
+<h6 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h6><p>作用域就是作用范围，分为全局作用域和局部作用域。</p>
+<p>全局作用域：包含内置命名空间与全局命名空间，脚本任意位置均可使用。</p>
+<p>局部作用域：仅函数内部可以使用</p>
+<h5 id="函数的嵌套"><a href="#函数的嵌套" class="headerlink" title="函数的嵌套"></a>函数的嵌套</h5><h5 id="global与nonlocal"><a href="#global与nonlocal" class="headerlink" title="global与nonlocal"></a>global与nonlocal</h5><p>未完。。待续</p>
 
       
 
@@ -353,7 +394,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的初识"><span class="toc-number">1.</span> <span class="toc-text">函数的初识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的结构"><span class="toc-number">1.1.</span> <span class="toc-text">函数的结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的调用"><span class="toc-number">1.2.</span> <span class="toc-text">函数的调用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的返回值"><span class="toc-number">1.3.</span> <span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的传参"><span class="toc-number">1.4.</span> <span class="toc-text">函数的传参</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#形参"><span class="toc-number">1.4.1.</span> <span class="toc-text">形参</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#实参"><span class="toc-number">1.4.2.</span> <span class="toc-text">实参</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的进阶"><span class="toc-number">2.</span> <span class="toc-text">函数的进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的参数"><span class="toc-number">2.1.</span> <span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#名称空间"><span class="toc-number">2.2.</span> <span class="toc-text">名称空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的嵌套"><span class="toc-number">2.3.</span> <span class="toc-text">函数的嵌套</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#global与nonlocal"><span class="toc-number">2.4.</span> <span class="toc-text">global与nonlocal</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的初识"><span class="toc-number">1.</span> <span class="toc-text">函数的初识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的结构"><span class="toc-number">1.1.</span> <span class="toc-text">函数的结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的调用"><span class="toc-number">1.2.</span> <span class="toc-text">函数的调用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的返回值"><span class="toc-number">1.3.</span> <span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的传参"><span class="toc-number">1.4.</span> <span class="toc-text">函数的传参</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#形参"><span class="toc-number">1.4.1.</span> <span class="toc-text">形参</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#实参"><span class="toc-number">1.4.2.</span> <span class="toc-text">实参</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的进阶"><span class="toc-number">2.</span> <span class="toc-text">函数的进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的参数"><span class="toc-number">2.1.</span> <span class="toc-text">函数的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#动态位置参数：-args"><span class="toc-number">2.1.1.</span> <span class="toc-text">动态位置参数：*args</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#动态关键字参数：-kwargs"><span class="toc-number">2.1.2.</span> <span class="toc-text">动态关键字参数：**kwargs</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#的用法——聚合和打散"><span class="toc-number">2.1.3.</span> <span class="toc-text">*的用法——聚合和打散</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命名空间与作用域"><span class="toc-number">2.2.</span> <span class="toc-text">命名空间与作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#命名空间"><span class="toc-number">2.2.1.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#作用域"><span class="toc-number">2.2.2.</span> <span class="toc-text">作用域</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的嵌套"><span class="toc-number">2.3.</span> <span class="toc-text">函数的嵌套</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#global与nonlocal"><span class="toc-number">2.4.</span> <span class="toc-text">global与nonlocal</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

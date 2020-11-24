@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 函数 | python知识点分享</title>
+  <title>python基础 - 文件操作 | python知识点分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是测试用的 &#x2F;&#x2F;网站描述">
-<meta name="keywords" content="hexo,next,python,博客    &#x2F;&#x2F;网站关键字,用英文逗号分开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="python知识点分享">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E5%87%BD%E6%95%B0&#x2F;index.html">
+  <meta name="description" content="本文主要讲解python的文件操作，包括文件的读、写、追加等方法。">
+<meta name="keywords" content="python,文件读写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础 - 文件操作">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;11&#x2F;20&#x2F;python%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C&#x2F;index.html">
 <meta property="og:site_name" content="python知识点分享">
-<meta property="og:description" content="这是测试用的 &#x2F;&#x2F;网站描述">
+<meta property="og:description" content="本文主要讲解python的文件操作，包括文件的读、写、追加等方法。">
 <meta property="og:locale" content="zh-CN &#x2F;&#x2F;这里改成上面在主题配置文件中看到的语言名字，注意英文冒号:后面有一个空格">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123223419.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123233742.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123234903.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201124232122.png">
+<meta property="og:updated_time" content="2020-11-24T16:03:14.762Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123223419.png">
   
     <link rel="alternative" href="/atom.xml" title="python知识点分享" type="application/atom+xml">
   
@@ -156,36 +162,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python基础-文件操作" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/19/python%E5%9F%BA%E7%A1%80-%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-08-19T12:04:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/python%E5%9F%BA%E7%A1%80-%E5%87%BD%E6%95%B0/">python基础 - 函数</a>
+    <h1 class="article-title" itemprop="name">
+      python基础 - 文件操作
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/11/20/python%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2020-11-20T13:33:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> [toc]</p>
+<p>本文主要讲解python的文件操作，包括文件的读、写、追加等方法。</p>
+ <a id="more"></a> 
+
+<h3 id="文件操作初识"><a href="#文件操作初识" class="headerlink" title="文件操作初识"></a>文件操作初识</h3><p>python打开一个文件的必要参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文件路径：用来定位文件</span><br><span class="line">编码方式：文件存储格式，常见有utf-8、gbk、gb2312等，文件按什么编码格式存储的就要按什么编码格式解码</span><br><span class="line">操作模式：只读、只写、追加、写读、读写</span><br></pre></td></tr></table></figure>
+
+<p>如下是一个简单的读文件的示例：</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201123223419.png" alt></p>
+<p>上面采用的是相对路径，mode就是打开文件的操作模式，默认为r，encoding参数用来指定编码的。</p>
+<p>open函数返回的是一个迭代器，这里用一个变量file来承接，通常我们将这个变量称为文件句柄。通过open生成的文件句柄我们可以对文件做一些读写操作，在文件操作之后需要手动关闭文件(调用close方法)。</p>
+<p>下面，我们从文件操作模式的角度来了解下常用的方法。</p>
+<h3 id="文件的读"><a href="#文件的读" class="headerlink" title="文件的读"></a>文件的读</h3><h4 id="r"><a href="#r" class="headerlink" title="r"></a>r</h4><p>r模式指以只读的方式打开文件，这是最常用的模式，也是默认的模式。上面的示例就是用的r模式。</p>
+<h5 id="文件读取的方法"><a href="#文件读取的方法" class="headerlink" title="文件读取的方法"></a>文件读取的方法</h5><h6 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h6><p>read()方法是一次性将文件中的所有的内容全部读取出来，不建议在读取大文件时使用，因为当文件很大时会极大占用内存甚至导致内存崩溃。</p>
+<p>read()方法是可以传参的，格式为整数，意为读取几个<strong>字符</strong>，如下图6行read(3)输出的就是”红酥手”三个字符，这里可以看出read()方法是按光标来读的，打开文件时光标默认是在文件开头，使用read(3)后光标向后位移了3位，之后再调用read()方法就是从第四个字符打印的了。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201123233742.png" alt></p>
+<h6 id="readline"><a href="#readline" class="headerlink" title="readline()"></a>readline()</h6><p>readline()每次只会读取一行，并且读出来的每行数据之后都会带个换行符(若不需要使用字符串的strip()方法即可去除)。</p>
+<p>与read()类同，readline()也是可以传参数的，同样参数格式为整数，意为指定读取字符数。如果指定字符长度小于等于该行实际字符数读出来的结果后面不带换行符，下一次readline()会读取该行剩余内容；如果指定字符长度大于该行实际字符数效果与不传参一样。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201123234903.png" alt></p>
+<h6 id="readlines"><a href="#readlines" class="headerlink" title="readlines()"></a>readlines()</h6><p>readlines()返回的是一个列表，列表中的元素依次是文件中的每一行，文件很大的时候同样容易撑爆内存。</p>
+<p>上面说了文件句柄其实就是一个迭代器，那么我们就可以通过for循环去读取其中的内容，这样每次循环在内存中占用的就是一行数据的空间，相较上面的方法能大大节省内存。</p>
+<h4 id="rb"><a href="#rb" class="headerlink" title="rb"></a>rb</h4><p>rb模式可以以只读模式打开一个文件，输出二进制数据。主要用来操作非文字文件，如图片、视频、音频等，使用带有b(binary)的模式，无需声明编码格式。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201124232122.png" alt></p>
+<p>rb模式同样有r模式的几种方法，这里就不多做说明了。</p>
+<h3 id="文件的写"><a href="#文件的写" class="headerlink" title="文件的写"></a>文件的写</h3><p>文件的写主要分为w、wb、w+、w+b，常用就是w和wb。</p>
+<h4 id="w"><a href="#w" class="headerlink" title="w"></a>w</h4><p>使用w模式的时候，文件存在会覆盖写入，文件不存在会先创建文件，再写入内容</p>
+<p>待续</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,29 +247,125 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">函数</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件读写</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/20/python%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/08/19/python%E5%9F%BA%E7%A1%80-%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python基础 - 函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作初识"><span class="toc-number">1.</span> <span class="toc-text">文件操作初识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的读"><span class="toc-number">2.</span> <span class="toc-text">文件的读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#r"><span class="toc-number">2.1.</span> <span class="toc-text">r</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#文件读取的方法"><span class="toc-number">2.1.1.</span> <span class="toc-text">文件读取的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#read"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">read()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#readline"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">readline()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#readlines"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">readlines()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rb"><span class="toc-number">2.2.</span> <span class="toc-text">rb</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的写"><span class="toc-number">3.</span> <span class="toc-text">文件的写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#w"><span class="toc-number">3.1.</span> <span class="toc-text">w</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -240,9 +388,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

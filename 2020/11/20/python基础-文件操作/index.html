@@ -20,7 +20,11 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123233742.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123234903.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201124232122.png">
-<meta property="og:updated_time" content="2020-11-24T16:03:14.762Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;write%E6%BC%94%E7%A4%BA.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201125232447.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;GIF%202020-11-25%2023-54-08.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;GIF%202020-11-26%200-25-39.gif">
+<meta property="og:updated_time" content="2020-11-25T16:37:17.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;jubing13&#x2F;images&#x2F;master&#x2F;img&#x2F;20201123223419.png">
   
@@ -191,24 +195,35 @@
 
 <p>如下是一个简单的读文件的示例：</p>
 <p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201123223419.png" alt></p>
-<p>上面采用的是相对路径，mode就是打开文件的操作模式，默认为r，encoding参数用来指定编码的。</p>
-<p>open函数返回的是一个迭代器，这里用一个变量file来承接，通常我们将这个变量称为文件句柄。通过open生成的文件句柄我们可以对文件做一些读写操作，在文件操作之后需要手动关闭文件(调用close方法)。</p>
+<p>上面采用的是相对路径，<code>mode</code>就是打开文件的操作模式，默认为r，<code>encoding</code>参数用来指定编码的。</p>
+<p><code>open</code>函数返回的是一个迭代器，这里用一个变量file来承接，通常我们将这个变量称为文件句柄。通过<code>open</code>生成的文件句柄我们可以对文件做一些读写操作，在文件操作之后需要手动关闭文件(调用<code>close</code>方法)。</p>
 <p>下面，我们从文件操作模式的角度来了解下常用的方法。</p>
-<h3 id="文件的读"><a href="#文件的读" class="headerlink" title="文件的读"></a>文件的读</h3><h4 id="r"><a href="#r" class="headerlink" title="r"></a>r</h4><p>r模式指以只读的方式打开文件，这是最常用的模式，也是默认的模式。上面的示例就是用的r模式。</p>
-<h5 id="文件读取的方法"><a href="#文件读取的方法" class="headerlink" title="文件读取的方法"></a>文件读取的方法</h5><h6 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h6><p>read()方法是一次性将文件中的所有的内容全部读取出来，不建议在读取大文件时使用，因为当文件很大时会极大占用内存甚至导致内存崩溃。</p>
-<p>read()方法是可以传参的，格式为整数，意为读取几个<strong>字符</strong>，如下图6行read(3)输出的就是”红酥手”三个字符，这里可以看出read()方法是按光标来读的，打开文件时光标默认是在文件开头，使用read(3)后光标向后位移了3位，之后再调用read()方法就是从第四个字符打印的了。</p>
+<h3 id="文件的读"><a href="#文件的读" class="headerlink" title="文件的读"></a>文件的读</h3><h4 id="r模式"><a href="#r模式" class="headerlink" title="r模式"></a>r模式</h4><p>r模式指以只读的方式打开文件，这是最常用的模式，也是默认的模式。上面的示例就是用的r模式。</p>
+<h5 id="文件读取的方法"><a href="#文件读取的方法" class="headerlink" title="文件读取的方法"></a>文件读取的方法</h5><h6 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h6><p><code>read()</code>方法是一次性将文件中的所有的内容全部读取出来，不建议在读取大文件时使用，因为当文件很大时会极大占用内存甚至导致内存崩溃。</p>
+<p><code>read()</code>方法是可以传参的，格式为整数，意为读取几个<strong>字符</strong>，如下图6行<code>read(3</code>)输出的就是”红酥手”三个字符，这里可以看出<code>read()</code>方法是按光标来读的，打开文件时光标默认是在文件开头，使用<code>read(3)</code>后光标向后位移了3位，之后再调用<code>read()</code>方法就是从第四个字符打印的了。</p>
+<p><code>read(n)</code>在读取二进制的时候n表示的是字节。</p>
 <p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201123233742.png" alt></p>
-<h6 id="readline"><a href="#readline" class="headerlink" title="readline()"></a>readline()</h6><p>readline()每次只会读取一行，并且读出来的每行数据之后都会带个换行符(若不需要使用字符串的strip()方法即可去除)。</p>
-<p>与read()类同，readline()也是可以传参数的，同样参数格式为整数，意为指定读取字符数。如果指定字符长度小于等于该行实际字符数读出来的结果后面不带换行符，下一次readline()会读取该行剩余内容；如果指定字符长度大于该行实际字符数效果与不传参一样。</p>
+<h6 id="readline"><a href="#readline" class="headerlink" title="readline()"></a>readline()</h6><p><code>readline()</code>每次只会读取一行，并且读出来的每行数据之后都会带个换行符(若不需要使用字符串的<code>strip()</code>方法即可去除)。</p>
+<p>与read()类同，<code>readline()</code>也是可以传参数的，同样参数格式为整数，意为指定读取字符数。如果指定字符长度小于等于该行实际字符数读出来的结果后面不带换行符，下一次<code>readline()</code>会读取该行剩余内容；如果指定字符长度大于该行实际字符数效果与不传参一样。</p>
 <p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201123234903.png" alt></p>
-<h6 id="readlines"><a href="#readlines" class="headerlink" title="readlines()"></a>readlines()</h6><p>readlines()返回的是一个列表，列表中的元素依次是文件中的每一行，文件很大的时候同样容易撑爆内存。</p>
+<h6 id="readlines"><a href="#readlines" class="headerlink" title="readlines()"></a>readlines()</h6><p><code>readlines()</code>返回的是一个列表，列表中的元素依次是文件中的每一行，文件很大的时候同样容易撑爆内存。</p>
 <p>上面说了文件句柄其实就是一个迭代器，那么我们就可以通过for循环去读取其中的内容，这样每次循环在内存中占用的就是一行数据的空间，相较上面的方法能大大节省内存。</p>
-<h4 id="rb"><a href="#rb" class="headerlink" title="rb"></a>rb</h4><p>rb模式可以以只读模式打开一个文件，输出二进制数据。主要用来操作非文字文件，如图片、视频、音频等，使用带有b(binary)的模式，无需声明编码格式。</p>
+<h4 id="rb模式"><a href="#rb模式" class="headerlink" title="rb模式"></a>rb模式</h4><p><code>rb</code>模式可以以只读模式打开一个文件，输出二进制数据。主要用来操作非文字文件，如图片、视频、音频等，使用带有<code>b</code>(binary)的模式，无需声明编码格式。</p>
 <p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201124232122.png" alt></p>
-<p>rb模式同样有r模式的几种方法，这里就不多做说明了。</p>
-<h3 id="文件的写"><a href="#文件的写" class="headerlink" title="文件的写"></a>文件的写</h3><p>文件的写主要分为w、wb、w+、w+b，常用就是w和wb。</p>
-<h4 id="w"><a href="#w" class="headerlink" title="w"></a>w</h4><p>使用w模式的时候，文件存在会覆盖写入，文件不存在会先创建文件，再写入内容</p>
-<p>待续</p>
+<p><code>rb</code>模式同样有<code>r</code>模式的几种方法，这里就不多做说明了。</p>
+<h3 id="文件的写"><a href="#文件的写" class="headerlink" title="文件的写"></a>文件的写</h3><p>文件的写主要分为<code>w</code>、<code>wb</code>、<code>w+</code>、<code>wb+</code>，常用就是<code>w</code>和<code>wb</code>。</p>
+<h4 id="w模式"><a href="#w模式" class="headerlink" title="w模式"></a>w模式</h4><p>使用<code>w</code>模式的时候，文件存在会覆盖写入，文件不存在会先创建文件，再写入内容，下面是一个简单的示例：</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/write%E6%BC%94%E7%A4%BA.gif" alt></p>
+<p>第一次写入没有文件，新建文件再写入，第二次写入已经有同名文件，覆盖写入。</p>
+<h4 id="wb模式"><a href="#wb模式" class="headerlink" title="wb模式"></a>wb模式</h4><p><code>wb</code>模式类同<code>rb</code>模式，后面带个<code>b</code>就是指操作的对象是二进制格式，<code>wb</code>就是指以二进制的格式打开一个文件用于写入。同样的，文件不存在会新建，存在会覆盖写入。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/20201125232447.png" alt></p>
+<h3 id="文件的追加"><a href="#文件的追加" class="headerlink" title="文件的追加"></a>文件的追加</h3><p>文件的写不能多次累加的写入内容，后面的内容会覆盖前面的内容，这时候就要引入文件的另一种操作模式——文件的追加</p>
+<h4 id="a模式"><a href="#a模式" class="headerlink" title="a模式"></a>a模式</h4><p><code>a</code>模式用于打开一个文件用于追加内容。文件存在就是指针位置就是文件结尾，新内容接着后面存；文件不存在会创建并写入。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/GIF%202020-11-25%2023-54-08.gif" alt></p>
+<h4 id="模式"><a href="#模式" class="headerlink" title="+模式"></a>+模式</h4><p>上述几种模式能满足日常的文件操作，但是我们需要先读取内容再写入内容时需要两次打开文件，那么这里就要介绍第四种操作模式——+模式，这是一类操作模式，包含<code>r+</code>、<code>w+</code>、<code>a+</code>，当然也包含对应的二进制操作<code>rb+</code>、<code>wb+</code>、<code>ab+</code>。带+的都是可读可写的模式，即既可以用<code>file.read()</code>也可以用<code>file.write()</code>。</p>
+<p>这里仅就<code>r+</code>的做介绍，其他的类同。示例中首先读取了文件内容(r模式)，然后写入了新的内容(a模式)。</p>
+<p><img src="https://raw.githubusercontent.com/jubing13/images/master/img/GIF%202020-11-26%200-25-39.gif" alt></p>
+<h3 id="文件操作的其他功能"><a href="#文件操作的其他功能" class="headerlink" title="文件操作的其他功能"></a>文件操作的其他功能</h3><h4 id="seek"><a href="#seek" class="headerlink" title="seek()"></a>seek()</h4><p><code>seek</code>的作用是移动光标到指定位置</p>
 
       
 
@@ -318,8 +333,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/08/19/python%E5%9F%BA%E7%A1%80-%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python基础 - 函数</div>
+    <a href="/2020/11/20/python%E5%9F%BA%E7%A1%80-/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python基础 - 文件操作</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -346,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作初识"><span class="toc-number">1.</span> <span class="toc-text">文件操作初识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的读"><span class="toc-number">2.</span> <span class="toc-text">文件的读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#r"><span class="toc-number">2.1.</span> <span class="toc-text">r</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#文件读取的方法"><span class="toc-number">2.1.1.</span> <span class="toc-text">文件读取的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#read"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">read()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#readline"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">readline()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#readlines"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">readlines()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rb"><span class="toc-number">2.2.</span> <span class="toc-text">rb</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的写"><span class="toc-number">3.</span> <span class="toc-text">文件的写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#w"><span class="toc-number">3.1.</span> <span class="toc-text">w</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作初识"><span class="toc-number">1.</span> <span class="toc-text">文件操作初识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的读"><span class="toc-number">2.</span> <span class="toc-text">文件的读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#r模式"><span class="toc-number">2.1.</span> <span class="toc-text">r模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#文件读取的方法"><span class="toc-number">2.1.1.</span> <span class="toc-text">文件读取的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#read"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">read()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#readline"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">readline()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#readlines"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">readlines()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rb模式"><span class="toc-number">2.2.</span> <span class="toc-text">rb模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的写"><span class="toc-number">3.</span> <span class="toc-text">文件的写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#w模式"><span class="toc-number">3.1.</span> <span class="toc-text">w模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wb模式"><span class="toc-number">3.2.</span> <span class="toc-text">wb模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的追加"><span class="toc-number">4.</span> <span class="toc-text">文件的追加</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a模式"><span class="toc-number">4.1.</span> <span class="toc-text">a模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模式"><span class="toc-number">4.2.</span> <span class="toc-text">+模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件操作的其他功能"><span class="toc-number">5.</span> <span class="toc-text">文件操作的其他功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#seek"><span class="toc-number">5.1.</span> <span class="toc-text">seek()</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
